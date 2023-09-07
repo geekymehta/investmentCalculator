@@ -72,7 +72,7 @@ const UserInput = (props) => {
             onChange={(event) =>
               inputChangeHandler("duration", event.target.value)
             }
-            value={userInput["duration"]}
+            value={userInput.duration}
             type="number"
             id="duration"
           />

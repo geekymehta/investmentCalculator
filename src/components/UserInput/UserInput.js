@@ -17,6 +17,7 @@ const UserInput = (props) => {
 
   const resetHandler = () => {
     setUserInput(initialUserInput);
+    props.onReset();
   };
 
   const inputChangeHandler = (input, value) => {

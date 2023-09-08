@@ -9,9 +9,7 @@ function App() {
   //const [userInput, setUserInput] = useState(null)
   let x = null;
 
-  const calculateHandler = (userInput) => {
-    
-    
+  const calculateHandler = (userInput) => {    
     const yearlyData = [];
     if(userInput){
       x = userInput["current-savings"];
@@ -34,12 +32,16 @@ function App() {
     setResults(yearlyData);
     };
 
+    const resetHandler = () => {
+      setResults(null);
+    };
+
   return (
     <div>
 
       <Header />
 
-      <UserInput onCalculate={calculateHandler} />
+      <UserInput onCalculate={calculateHandler} onReset = {resetHandler}/>
 
       {!results && <p>No Input Yet.</p>}
       {results && <ResultsTable data = {results} initialInvestment = {x}/>}

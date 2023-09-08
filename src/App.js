@@ -43,7 +43,7 @@ function App() {
 
       <UserInput onCalculate={calculateHandler} onReset = {resetHandler}/>
 
-      {!results && <p style ={{textAlign : "center"}}>No Input Yet.</p>}
+      {!results && <p>No Input Yet.</p>}
       {results && <ResultsTable data = {results} initialInvestment = {x}/>}
 
     </div>

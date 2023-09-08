@@ -4,12 +4,15 @@ import UserInput from "./components/UserInput/UserInput";
 import ResultsTable from "./components/ResultsTable/ResultsTable";
 
 function App() {
-  const [results, setResults] = useState(null); 
+  //const [results, setResults] = useState(null); 
   //const [yearlyData, setYearlyData] = useState(); 
-  //const [userInput, setUserInput] = useState(null)
+  const [userInput, setUserInput] = useState(null)
   let x = null;
 
   const calculateHandler = (userInput) => {
+    setUserInput(userInput);
+  };
+
     
     
     const yearlyData = [];
@@ -31,8 +34,6 @@ function App() {
         });
       }
     }  
-    setResults(yearlyData);
-    };
 
   return (
     <div>
@@ -41,8 +42,8 @@ function App() {
 
       <UserInput onCalculate={calculateHandler} />
 
-      {!results && <p>No Input Yet.</p>}
-      {results && <ResultsTable data = {results} initialInvestment = {x}/>}
+      {!userInput && <p style = {{textAlign : 'center'}}>No Input Yet.</p>}
+      {userInput && <ResultsTable data = {yearlyData} initialInvestment = {userInput["currentSavings"]}/>}
 
     </div>
   );

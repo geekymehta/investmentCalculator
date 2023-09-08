@@ -4,7 +4,7 @@ import UserInput from "./components/UserInput/UserInput";
 import ResultsTable from "./components/ResultsTable/ResultsTable";
 
 function App() {
-  const [results, setResults] = useState(null); 
+  const [results, setResults] = useState(null); //alternate way
   //const [yearlyData, setYearlyData] = useState(); 
   //const [userInput, setUserInput] = useState(null)
   let x = null;
